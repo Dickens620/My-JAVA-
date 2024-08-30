@@ -1,0 +1,137 @@
+1.4. Dealing with Missing Values 11
+Table 1.1. A list of methods for dealing with missing values.
+Method Group Attribute Case Cost
+Mean-and-mode method (a) Num & Cat (2) Low
+Linear regression (a) Num (2) Low
+Standard deviation method (a) Num (2) Low
+Nearest neighbor estimator (a) Num & Cat (1) High
+Decision tree imputation (a) Cat (1) Middle
+Autoassociative neural network (a) Num & Cat (1) High
+Casewise deletion (b) Num & Cat (2) Low
+Lazy decision tree (b) Num & Cat (1) High
+Dynamic path generation (b) Num & Cat (1) High
+C4.5 (b) Num & Cat (1) Middle
+Surrogate split (b) Num & Cat (1) Middle
+NCBMM (Natural Cluster Based Mean-and-Mode algorithm), RCBMM (attribute Rank
+Cluster Based Mean-and-Mode algorithm) and KMCMM (k-Means Cluster-Based Meanand-
+Mode algorithm). NCBMMis a method of filling in missing values in case of supervised
+data. NCBMM uses the class attribute to divide objects into natural clusters and uses the
+mean or mode of each cluster to fill in the missing values of objects in that cluster depending
+on the type of attribute. Since most clustering applications are unsupervised, the NCBMM
+method cannot be applied directly. The last two methods, RCBMM and KMCMM, can be
+applied to both supervised and unsupervised data clustering.
+RCBMM is a method of filling in missing values for categorical attributes and is
+independent of the class attribute. This method consists of three steps. Given a missing
+attribute a, at the first step, this method ranks all categorical attributes by their distance from
+the missing value attribute a. The attribute with the smallest distance is used for clustering.
+At the second step, all records are divided into clusters, each of which contains records with
+the same value of the selected attribute. Finally, the mode of each cluster is used to fill in the
+missing values. This process is applied to each missing attribute. The distance between two
+attributes can be computed using the method proposed in (Mántaras, 1991) (see Section 6.9).
+KMCMM is a method of filling in missing values for numerical attributes and is
+independent of the class attribute. It also consists of three steps. Given a missing attribute
+a, firstly, the algorithm ranks all the numerical attributes in increasing order of absolute
+correlation coefficients between them and the missing attribute a. Secondly, the objects
+are divided into k clusters by the k-means algorithm based on the values of a. Thirdly, the
+missing value on attribute a is replaced by the mean of each cluster. This process is applied
+to each missing attribute.
+Cluster-based methods to deal with missing values and errors in data have also been
+discussed in (Lee et al., 1976). Other discussions about missing values and errors have been
+presented in (Wu and Barbará, 2002) and (Wishart, 1978).
+12 Chapter 1. Data Clustering
+1.5 Resources for Clustering
+In the past 50 years, there has been an explosion in the development and publication of
+cluster-analytic techniques published in a wide range of technical journals. Here we list
+some survey papers, books, journals, and conference proceedings on which our book is
+based.
+1.5.1 Surveys and Reviews on Clustering
+Several surveys and reviews related to cluster analysis have been published. The following
+list of survey papers may be interesting to readers.
+1. A review of hierarchical classification by Gordon (1987)
+2. A review of classification by Cormack (1971)
+3. A survey of fuzzy clustering by Yang (1993)
+4. A survey of fuzzy clustering algorithms for pattern recognition. I by Baraldi and
+Blonda (1999a)
+5. A survey of fuzzy clustering algorithms for pattern recognition. II by Baraldi and
+Blonda (1999b)
+6. A survey of recent advances in hierarchical clustering algorithms by Murtagh (1983)
+7. Cluster analysis for gene expression data: A survey by Jiang et al. (2004)
+8. Counting dendrograms: A survey by Murtagh (1984b)
+9. Data clustering: A review by Jain et al. (1999)
+10. Mining data streams: A review by Gaber et al. (2005)
+11. Statistical pattern recognition: A review by Jain et al. (2000)
+12. Subspace clustering for high dimensional data: A review by Parsons et al. (2004b)
+13. Survey of clustering algorithms by Xu andWunsch II (2005)
+1.5.2 Books on Clustering
+Several books on cluster analysis have been published. The following list of books may be
+helpful to readers.
+1. Principles of Numerical Taxonomy, published by Sokal and Sneath (1963), reviews
+most of the applications of numerical taxonomy in the field of biology at that time.
+Numerical Taxonomy: The Principles and Practice of Numerical Classification by
+Sokal and Sneath (1973) is a new edition of Principles of Numerical Taxonomy.
+Although directed toward researchers in the field of biology, the two books review
+much of the literature of cluster analysis and present many clustering techniques
+available at that time.
+2. Cluster Analysis: Survey and Evaluation of Techniques by Bijnen (1973) selected a
+number of clustering techniques related to sociological and psychological research.
+1.5. Resources for Clustering 13
+3. Cluster Analysis: A Survey by Duran and Odell (1974) supplies an exposition of
+various works in the literature of cluster analysis at that time. Many references that
+played a role in developing the theory of cluster analysis are contained in the book.
+4. Cluster Analysis for Applications by Anderberg (1973) collects many clustering techniques
+and provides many FORTRAN procedures for readers to perform analysis of
+real data.
+5. Clustering Algorithms by Hartigan (1975) is a book presented from the statistician’s
+point of view. Awide range of procedures, methods, and examples is presented. Also,
+some FORTRAN programs are provided.
+6. Cluster Analysis for Social Scientists by Lorr (1983) is a book on cluster analysis
+written at an elementary level for researchers and graduate students in the social and
+behavioral sciences.
+7. Algorithms for Clustering Data by Jain and Dubes (1988) is a book written for the
+scientific community that emphasizes informal algorithms for clustering data and
+interpreting results.
+8. Introduction to Statistical Pattern Recognition by Fukunaga (1990) introduces fundamental
+mathematical tools for the supervised clustering classification. Although
+written for classification, this book presents clustering (unsupervised classification)
+based on statistics.
+9. Cluster Analysis by Everitt (1993) introduces cluster analysis for works in a variety of
+areas. Many examples of clustering are provided in the book. Also, several software
+programs for clustering are described in the book.
+10. Clustering for Data Mining: A Data Recovery Approach by Mirkin (2005) introduces
+data recovery models based on the k-means algorithm and hierarchical algorithms.
+Some clustering algorithms are reviewed in this book.
+1.5.3 Journals
+Articles on cluster analysis are published in a wide range of technical journals. The following
+is a list of journals in which articles on cluster analysis are usually published.
+1. ACM Computing Surveys
+2. ACM SIGKDD Explorations Newsletter
+3. The American Statistician
+4. The Annals of Probability
+5. The Annals of Statistics
+6. Applied Statistics
+7. Bioinformatics
+8. Biometrics
+9. Biometrika
+10. BMC Bioinformatics
+11. British Journal of Health Psychology
+12. British Journal of Marketing
+14 Chapter 1. Data Clustering
+13. Computer
+14. Computers & Mathematics with Applications
+15. Computational Statistics and Data Analysis
+16. Discrete and Computational Geometry
+17. The Computer Journal
+18. Data Mining and Knowledge Discovery
+19. Engineering Applications of Artificial Intelligence
+20. European Journal of Operational Research
+21. Future Generation Computer Systems
+22. Fuzzy Sets and Systems
+23. Genome Biology
+24. Knowledge and Information Systems
+25. The Indian Journal of Statistics
+26. IEEE Transactions on Evolutionary Computation
+27. IEEE Transactions on Information Theory
+28. IEEE Transactions on Image Processing
+29. IEEE Transactions on Knowledge and Data Engineering
+30. IEEE Transactions on Neural Networks
+31. IEEE Transactions on Pattern Analysis and Machine Intelligence
